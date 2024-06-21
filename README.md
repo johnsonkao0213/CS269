@@ -1,6 +1,8 @@
 **CS269**: A Preliminary Study of BiADT’s Domain Adaptation Abilities on Multispectral Images
 ========
 [report link](https://drive.google.com/file/d/1hqbXcS7g6eHs79Y0OKZFlEAIEOaL_OlK/view?usp=sharing)
+[project page](https://johnsonkao0213.github.io/CS269/)
+[code page](https://github.com/johnsonkao0213/CS269)
 
 ## Table of Contents
 - [Model Weights](#model_weights)
