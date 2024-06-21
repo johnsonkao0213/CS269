@@ -5,7 +5,7 @@
 ## Table of Contents
 - [Model Weights](#model_weights)
 - [Datasets](#datasets)
-- [Installation](#instllation)
+- [Installation](#installation)
 
 
 ## Model_Weights
