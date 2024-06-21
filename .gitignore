@@ -1,0 +1,5 @@
+/venv
+/weights/*.pth
+/datasets/FLIR_ADAS_v2
+*.log
+__pycache__/

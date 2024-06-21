@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Are LLMs Capable of Data-based Statistical and Causal Reasoning? Benchmarking Advanced Quantitative Reasoning with Data">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS269 Project</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title is-bold">
+              A Preliminary Study of BiADT's Domain Adaptation Abilities on Multi-Spectral Images
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://johnsonkao0213.github.io/">Kuei-Chun Kao</a><sup style="color:#ffac33">2</sup>,</span>
+              <span class="author-block">
+                Oliver De Visser<sup style="color:#ffac33">2</sup>,</span>
+              <span class="author-block">
+                Yu-Hsin Weng<sup style="color:#ffac33">2</sup>,</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup style="color:#ffac33">2</sup>University of California Los Angeles</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://drive.google.com/file/d/1hqbXcS7g6eHs79Y0OKZFlEAIEOaL_OlK/view?usp=sharing"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/xxxiaol/QRData" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column" style="margin-right: -10rem;">
+          <div class="content has-text-centered">
+            <img src="static/images/flir.png" alt="Examples of FLIR dataset" style="max-width: 70%;" />
+            <p>
+              Examples of FLIR dataset.<br />
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <img src="static/images/flir2.png" alt="Examples of LLVIP dataset" style="max-width: 70%;" />
+            <p>
+              Examples of LLVIP dataset.<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h2 class="title is-3">Introduction</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              Multi-spectral infrared object detection, where objects are identified across different infrared
+              wavelengths, is a
+              complex task. While general-purpose cross-domain object detection models like Bidirectional Alignment for
+              Domain
+              Adaptive Detection with Transformers (BiADT) and Adversarial Query Transformers (AQT) show promise on
+              certain datasets,
+              their effectiveness for infrared object detection is unclear. This is because the vast difference in
+              wavelengths between
+              RGB and infrared images creates unique challenges.
+              To investigate this, we conducted experiments on some challenging multispectral datasets, e.g. FLIR and
+              LLVIP to see if
+              existing cross-domain frameworks can handle infrared data. We tested BiADT with different detector
+              backbones to analyze
+              the results. Our findings show that BiADT with the DINO backbone achieved competitive performance in
+              mAP50.
+            </p>
+
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/intro.png" width="50%">
+                <p> Overview system of BiADT.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              Our study raises its unique challenges:
+            <ul>
+              <li><strong>How to best integrate information from
+                  different wavelengths to fully exploit their comeplementary nature?</strong>
+              </li>
+              <li><strong>how to design an effective cross-modality
+                  fusion mechanism to further improve performance?</strong>
+              </li>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATASET SECTION -->
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 section-title">
+        <img src="static/images/icon.svg" style="width:1em;vertical-align: middle" alt="Logo" />
+        <span style="vertical-align: middle">Method</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Overview</h2>
+          <div class="content has-text-justified">
+            <p>
+              We present a detailed overview of our proposed system. This study aims to achieve two primary objectives:
+              first, to
+              identify the most effective backbone model for learning the domain gap between RGB and multispectral
+              images by
+              fine-tuning the pretrained models, and second, to evaluate the system's performance across various
+              multispectral
+              datasets to ensure accurate capture of latent interactions between RGB and thermal images.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" id="examples">Different Backbone Dectectors</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/rw1.png" width="95%" />
+                <p>Overview of DETR.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/rw2.png" width="45%" />
+                <p>Overview of Deformable-DETR.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/rw3.png" width="95%" />
+                <p>Overview of DAB-DETR.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/rw4.png" width="95%" />
+                <p>Overview of DN-DETR.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/rw5.png" width="95%" />
+                <p>Overview of DINO.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RESULTS SECTION -->
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title is-1 section-title">
+        <span style="vertical-align: middle">Results</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              We evaluate several multi-spectral datasets as our main study:
+            </p>
+            <ul>
+              <li><strong>FLIR:</strong> The FLIR ADAS dataset is a challenging multispectral object detection dataset
+                that includes day and night scenes. We cover three object categories: "person", "car" and
+                "bike" in our evlauation.</li>
+              <li><strong>LLVIP:</strong> LLVIP is a very recently released visible-infrared
+                paired pedestrians dataset for low-light vision and it only covers one category.</li>
+            </ul>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Below we present the detection results on FLIR with different backbone detectors.
+            </p>
+          </div>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/ground-truth.jpg" width="90%" />
+                <p>Ground truth.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/fifth-best.jpg" width="90%" />
+                <p>Detection results with DETR backbone.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/fourth-best.jpg" width="90%" />
+                <p>Detection results with Deformable-DETR backbone.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/third-best.jpg" width="90%" />
+                <p>Detection results with DAB-DETR backbone.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/second-best.jpg" width="90%" />
+                <p>Detection results with DN-DETR backbone.</p>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="static/images/top-best.jpg" width="90%" />
+                <p>Detection results with DINO backbone.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" id="failure_case">Performance Table</h2>
+          <div class="columns is-centered">
+            <div class="column" style="margin-right: -20rem;">
+              <div class="content has-text-centered">
+                <img src="static/images/Detector_flir.png" alt="dataset statistics" style="max-width: 60%;" />
+                <p>
+                  mAP50 Performance of FLIR dataset.<br />
+                </p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="content has-text-centered">
+                <img src="static/images/Detector_llvp.png" alt="dataset keywords" style="max-width: 40%;" />
+                <p>
+                  mAP50 Performance of LLVIP dataset.<br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              For FLIR ADAS v2 dataset, all architectures predicted "car" category better, we think it is because of the
+              object size
+              of cars is larger than bikes and people, and the dataset is imbalance in the three categories.
+              Specifically, the number
+              of car annotations is larger than the number of person annotations and bike annotations, the number of car
+              annotations
+              is even ten times as large as the number of bike annotations. Starting with DAB-DETR, DAB-DETR, DN-DETR,
+              and DINO
+              exhibited significant performance improvement across all categories. Notably, the "person" category saw a
+              remarkable
+              improvement, highlighting the benefits of dynamic anchor boxes in small objects detection. Finally, DINO
+              achieved the
+              strongest overall performance, though its results were similar to DN-DETR.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a
+                href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
